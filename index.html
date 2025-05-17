@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenScape Landscaping</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .hero.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .services i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: green;
+      transition: color 0.3s ease;
+    }
+    .services i:hover {
+      color: darkgreen;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    button.btn-light {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button.btn-light:hover {
+      background-color: darkgreen;
+      color: white;
+    }
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+      <a class="navbar-brand" href="#">GreenScape</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="text-center">
+      <h1>Transform Your Outdoors</h1>
+      <p>Professional Landscaping Services</p>
+    </div>
+  </header>
+  <section id="about" class="container py-5 fade-in">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>About Us</h2>
+        <p>
+          GreenScape is a professional landscaping company that brings beauty
+          to your outdoors. From lawn maintenance to garden design, we do it all
+          with passion and precision.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img
+          src="https://images.unsplash.com/photo-1618221680802-6305c9534eb5"
+          alt="About"
+          class="img-fluid rounded"
+        />
+      </div>
+    </div>
+  </section>
+  <section id="services" class="bg-light py-5 text-center fade-in">
+    <h2 class="mb-4">Our Services</h2>
+    <div class="row services">
+      <div class="col-md-4">
+        <i class="fas fa-seedling"></i>
+        <h5>Garden Design</h5>
+        <p>
+          We create elegant, natural designs to transform your outdoor spaces.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-tree"></i>
+        <h5>Tree Trimming</h5>
+        <p>Professional tree pruning for safety, health, and beauty.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-water"></i>
+        <h5>Irrigation</h5>
+        <p>Efficient watering systems that save time and water.</p>
+      </div>
+    </div>
+  </section>
+  <section id="gallery" class="gallery container py-5 fade-in">
+    <h2 class="text-center mb-4">Gallery</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <img
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1532f1"
+          alt="Gallery"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <img
+          src="https://images.unsplash.com/photo-1568393694843-b37d0cc9d0f3"
+          alt="Gallery"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <img
+          src="https://images.unsplash.com/photo-1615881436596-cbe9030a6c8d"
+          alt="Gallery"
+        />
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="bg-success text-white py-5 fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Send</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Phone: (123) 456-7890</h5>
+          <h5>Email: info@greenscape.com</h5>
+          <h5>Address: 123 Garden St, Green City</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 GreenScape Landscaping. All rights reserved.</p>
+  </footer>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll(".fade-in");
+      const options = { threshold: 0.1 };
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+
+      // Animate hero on load
+      const hero = document.querySelector(".hero");
+      if (hero) {
+        hero.classList.add("visible");
+      }
+    });
+  </script>
+</body>
+</html>
